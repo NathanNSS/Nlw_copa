@@ -17,6 +17,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "scheme": "copamobile",
     "ios": {
       "supportsTablet": true
     },
