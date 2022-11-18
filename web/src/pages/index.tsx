@@ -89,6 +89,7 @@ export default function Home(props: HomeProps) {
             <Image
                 src={appPreviewImg}
                 alt="Previa do mobile do APP COPA"
+                priority
                 quality={100}
                 className="object-contain"
             />
@@ -103,7 +104,7 @@ export const getServerSideProps = async () => {
             api.get("guesses/count"),
             api.get("users/count"),
 
-        ])
+        ]).catch(err => {return [{data:{count:0}},{data:{count:0}},{data:{count:0}},]})
         return {
             props: {
                 pollsCount: pollsCount.data.count,

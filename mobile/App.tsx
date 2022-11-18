@@ -3,11 +3,9 @@ import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from "@
 import { NativeBaseProvider, StatusBar } from "native-base";
 import { THEME } from './src/styles/theme'
 import { Loading } from './src/components/Loading';
-import { Pools } from './src/pages/Pools';
+import { Routes } from './src/routes';
 import { AuthProvider } from "./src/contexts/AuthContext";
-import * as dotenv from 'dotenv'
 
-dotenv.config()
 
 export default function App() {
     const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_500Medium, Roboto_700Bold })
@@ -19,7 +17,7 @@ export default function App() {
                     backgroundColor="transparent"
                     translucent={true}
                 />
-                {fontsLoaded ? <Pools /> : <Loading />}
+                {fontsLoaded ? <Routes /> : <Loading />}
             </AuthProvider>
         </NativeBaseProvider>
     );

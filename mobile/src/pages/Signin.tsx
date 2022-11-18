@@ -8,7 +8,7 @@ import { useAuth } from "../hooks/useAuth";
 
 export function SignIn() {
 
-    const { user, signIn } = useAuth()
+    const { user, signIn, isUserLoading } = useAuth()
 
     console.log(`Dados User => {
         nome:${user.name},
@@ -21,10 +21,10 @@ export function SignIn() {
             <Button
                 mt="12"
                 type="SECONDARY"
-                isLoading={false}
                 title="ENTRAR COM GOOGLE"
                 onPress={signIn}
                 leftIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
+                isLoading={isUserLoading}
             />
             <Text color="gray.200" textAlign="center" fontSize="sm" mt="4">
                 Não utilizamos nenhuma informação além {"\n"} do seu e-mail para criação de sua conta.

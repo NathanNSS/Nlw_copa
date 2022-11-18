@@ -23,11 +23,3 @@ export function Find() {
         </VStack>
     );
 }
-
-// Criar novo bolão
-// Crie seu próprio bolão da copa e compartilhe entre amigos!
-// Qual nome do seu bolão?
-// CRIAR MEU BOLÃO
-// Após criar seu bolão, você receberá um código único que poderá usar para convidar outras pessoas.
-// Novo bolão
-// Meus bolões
