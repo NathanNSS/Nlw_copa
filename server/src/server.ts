@@ -13,7 +13,7 @@ const port = 3333
 
 async function start(){
     const fastify = Fastify({
-        logger: true,        
+        //logger: true,        
     })
     
     await fastify.register(cors,{

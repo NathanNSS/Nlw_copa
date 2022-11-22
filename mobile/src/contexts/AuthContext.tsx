@@ -54,10 +54,10 @@ export function AuthProvider({ children }: InterfaceAuthProvider) {
             setIsUserLoading(true)
             let resToken = await api.post<{token:string}>("/users", { access_token: accessToken})
             api.defaults.headers.common["Authorization"] = `Bearer ${resToken.data.token}` 
-            console.log(resToken.data)
+            //console.log(resToken.data)
 
             const { data } = await api.get<{user:InterfaceUser}>("/me")
-            console.log(data)
+            //console.log(data)
 
             setUser(data.user)
         }catch(error){

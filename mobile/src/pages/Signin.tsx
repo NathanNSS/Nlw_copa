@@ -12,7 +12,8 @@ export function SignIn() {
 
     console.log(`Dados User => {
         nome:${user.name},
-        avaterUrl:${user.avatarUrl}
+        avaterUrl :${user.avatarUrl},
+        user:${JSON.stringify(user)}
     }`)
     
     return (
