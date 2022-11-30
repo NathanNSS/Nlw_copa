@@ -30,7 +30,7 @@ async function start(){
     await fastify.register(jwt,{
         secret:String(process.env.SECRET_KEY)
     })
-   
+    //retire o "host" para rodar o web
     await fastify.listen({port: port, host: "0.0.0.0"})
 }
 

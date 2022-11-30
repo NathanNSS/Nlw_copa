@@ -12,12 +12,16 @@ interface Props {
     code: string;
 }
 
+export interface IGuess{
+    gameId:string;
+    firstTeamPoints:string;
+    secondTeamPoints:string;
+}
+
 export function Guesses({ poolId, code }: Props) {
     const toast = useToast()
 
     const [isLoading, setIsLoading] = useState(true)
-    const [firstTeamPoints, setFirstTeamPoints] = useState('')
-    const [secondTeamPoints, setSecondTeamPoints] = useState('')
     const [games, setGames] = useState<GameProps[]>([])
 
     async function getGames(){
@@ -25,6 +29,7 @@ export function Guesses({ poolId, code }: Props) {
             setIsLoading(true)
             const res = await api.get(`/pools/${poolId}/games`);
             setGames(res.data.games)
+            console.log(res.data.games[0].guess)
         }catch(error){
             console.log(error)
 
@@ -38,7 +43,7 @@ export function Guesses({ poolId, code }: Props) {
         }
     }
 
-    async function setGuess(gameId: string){
+    async function setGuess({ gameId, secondTeamPoints, firstTeamPoints }: IGuess) {
         try{
             if(!firstTeamPoints.trim() || !secondTeamPoints.trim()) return toast.show({
                 title: "Informe o Placar dos Dois Times",
@@ -92,9 +97,7 @@ export function Guesses({ poolId, code }: Props) {
                         renderItem={({ item }) => (
                             <Game
                                 data={item}
-                                setFirstTeamPoints={setFirstTeamPoints}
-                                setSecondTeamPoints={setSecondTeamPoints}
-                                onGuessConfirm={() => setGuess(item.id)}
+                                onGuessConfirm={setGuess}
                             />
                         )}
                     />

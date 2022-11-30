@@ -97,8 +97,8 @@ export default function Home(props: HomeProps) {
     )
 }
 
-export const getServerSideProps = async () => {
-    try {
+export async function getStaticProps(){
+    try{
         const [pollsCount, guessesCount, usersCount] = await Promise.all([
             api.get("pools/count"),
             api.get("guesses/count"),
@@ -110,11 +110,32 @@ export const getServerSideProps = async () => {
                 pollsCount: pollsCount.data.count,
                 guessesCount: guessesCount.data.count,
                 usersCount: usersCount.data.count,
-            }
+            },
+            revalidate:300
         }
-    } catch (error) {
+    }catch(error){
         console.log(error)
     }
-
-
 }
+
+// export const getServerSideProps = async () => {
+//     try {
+//         const [pollsCount, guessesCount, usersCount] = await Promise.all([
+//             api.get("pools/count"),
+//             api.get("guesses/count"),
+//             api.get("users/count"),
+
+//         ]).catch(err => {return [{data:{count:0}},{data:{count:0}},{data:{count:0}},]})
+//         return {
+//             props: {
+//                 pollsCount: pollsCount.data.count,
+//                 guessesCount: guessesCount.data.count,
+//                 usersCount: usersCount.data.count,
+//             }
+//         }
+//     } catch (error) {
+//         console.log(error)
+//     }
+
+
+// }
