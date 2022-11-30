@@ -53,7 +53,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🚀 Como executar
 
-#### **❗ Acesse os repositório para mais detalhes**
+#### **❗ Acesse os repositórios para mais detalhes**
 - Clone o repositório
 > [Server](./server/)
 - Rode `cd server` para ir até a pasta da api
