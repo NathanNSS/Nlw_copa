@@ -17,6 +17,9 @@
 
 O <b>NLW COPA</b> e um projeto multiplataforma que disponibiliza meios para você e seus amigos criarem bolões e torcem juntos nessa copa do mundo, foi desenvolvido durante a semana do [NLW-COPA](https://github.com/rocketseat-education/nlw-copa-ignite) com base neste [protótipo](https://www.figma.com/file/pOsKQzvg6RPHXLRSEopTUm/Bol%C3%A3o-da-Copa).
 
+
+<br>
+
 ## ✨ Tecnologias
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
@@ -46,7 +49,10 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Navigation](https://reactnavigation.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 
+<br>
+
 ## 🚀 Como executar
+
 #### **❗ Acesse os repositório para mais detalhes**
 - Clone o repositório
 > [Server](./server/)
@@ -70,6 +76,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Execute o [Server](./server#-como-executar) e conecte-se
 - Rode o `npx expo start` para iniciar a aplicação
 - Por fim, o **Bundler do APP** estará disponível
+
+<br>
 
 ## 📄 Licença
 
